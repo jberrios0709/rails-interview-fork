@@ -1,0 +1,11 @@
+
+<% if @todo_list.errors&.count.positive? %>
+  <% @todo_list.errors.full_messages.each do |error| %>
+    <label class="error"><%= error %></label>
+  <% end %>
+<% end %>
+
+<%= form_with model: @todo_list do |form| %>
+  <%= form.text_field :name , class: 'text'%>
+  <%= form.submit %>
+<% end %>
